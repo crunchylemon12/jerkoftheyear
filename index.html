@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<h1> Jerk of the Year countdown </h1>
+
+<p> Time left: </p>
+<p id="timer">Loading...</p>
+
+<br>
+<br>
+<br>
+
+<p>Previous Jerks:</p>
+<p>2024: Bryce</p>
+<p>2023: Jared</p>
+<p>2022: ?</p>
+<p>2021: Jared/Gavin </p>
+</html>
+
+
+
+<script>
+// time set using https://www.w3schools.com/howto/howto_js_countdown.asp
+var jotyDate = new Date("Dec 27, 2025 22:45:00").getTime();
+
+// updating time
+var x = setInterval(function() {
+	var now = new Date().getTime();
+	var distance = jotyDate - now;
+
+	// calcuting time, copied from w3schools
+	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+	document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+	if (distance < 0) {
+		clearInterval(x);
+		document.getElementById("timer").innerHTML = "Vote starting soon...";
+	}
+}, 1000);
+
+
+
+
+</script>
