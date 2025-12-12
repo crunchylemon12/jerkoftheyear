@@ -63,8 +63,8 @@
         player.speedY = 0;
         if (myGameArea.keys && myGameArea.keys[37]) {player.speedX = -1; }
         if (myGameArea.keys && myGameArea.keys[39]) {player.speedX = 1; }
-        if (myGameArea.keys && myGameArea.keys[38]) {player.speedX = -1; }
-        if (myGameArea.keys && myGameArea.keys[40]) {player.speedX = 1; }
+        if (myGameArea.keys && myGameArea.keys[38]) {player.speedY = -1; }
+        if (myGameArea.keys && myGameArea.keys[40]) {player.speedY = 1; }
         player.newPos();
         player.update();
       }
@@ -76,10 +76,10 @@
         player.speedY += 1;
       }
       function mLeft() {
-        player.speedY -= 1;
+        player.speedX -= 1;
       }
       function mRight() {
-        player.speedY += 1;
+        player.speedX += 1;
       }
 
       function stopMove() {
